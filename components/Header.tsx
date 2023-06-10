@@ -41,9 +41,9 @@ export default function Header() {
                         </li>
                         {
                             item.children && <ul>
-                                {item.children.map(child => <li key={child.href}>
+                                {item.children.map(child => <li key={child.href} className='hvr-underline-from-center'>
                                     <Link
-                                        className={'hvr-underline-from-center' + (pathname == child.href && "active" || '')}
+                                        className={(pathname == child.href && "active" || '')}
                                         href={child.href}>
                                         {child.name}
                                     </Link>

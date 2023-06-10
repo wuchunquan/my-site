@@ -59,26 +59,29 @@ header {
 
       // 二级菜单
       > ul {
-        color: black;
         transition: all ease-in-out 0.3s;
         visibility: hidden;
-        border-top: 4px solid red;
-        border-radius: 0 0 0.25rem 0.25rem;
+        //border-top: 4px solid red;
+        border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
         box-shadow: 2px 3px 5px #00000061;
         box-sizing: content-box;
         min-width: 8rem;
         line-height: 2rem;
-        @apply absolute  opacity-0  border border-opacity-0 invisible mt-8 bg-white;
+        border-width: 0;
+        padding: 0.5rem 1rem 1rem;
+        color: white;
+        background: #464365;
+        @apply absolute  opacity-0    invisible mt-8 flex flex-col;
 
         > li {
-
-          @apply px-2;
+          border-bottom: 1px solid #ffffff4a;
+          @apply px-2 block;
           a.active {
             color: #ff75b0;
           }
 
           &:hover {
-            @apply text-red-500
+            @apply text-red-400
           }
         }
 
@@ -87,7 +90,7 @@ header {
 
       &:hover {
         > ul {
-          @apply opacity-100 visible mt-0.5 border-opacity-100
+          @apply opacity-100 visible mt-0.5
         }
       }
     }
@@ -109,12 +112,12 @@ header {
     text-indent: 0.5rem;
     flex-flow: column;
     position: absolute;
-    top: 2.8rem;
+    top: 2.9rem;
     width: 80%;
     max-width: 12rem;
     right: 2px;
-    background: #3e5376;
-    border-top: 2px solid red;
+    background: #464365;
+    //border-top: 2px solid red;
     border-radius: 0 0 0.5rem 0.5rem;
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3803921569);
 
@@ -125,7 +128,7 @@ header {
       line-height: 2rem;
 
       > li {
-        box-shadow: 0px 1px 1px #00000061;
+        border-bottom: 1px solid #ffffff4a;
 
         a.active {
           color: #ff75b0;
@@ -138,14 +141,19 @@ header {
 
       // 二级菜单
       > ul {
+        display: flex;
+        flex-flow: column;
         transition: none !important;
-        box-shadow: 0px 1px 1px #00000061;
+        border-bottom: 1px solid #ffffff4a;
         min-width: 8rem;
         line-height: 2rem;
         color: white;
         opacity: 0.9;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
 
-        > li {
+
+         li {
           text-indent: 1rem;
 
           a.active {
@@ -153,7 +161,7 @@ header {
           }
 
           &:hover {
-            @apply text-red-500
+            color: #ff75b0;
           }
         }
 
@@ -162,7 +170,7 @@ header {
 
       &:hover {
         > ul {
-          @apply opacity-100 visible mt-0.5 border-opacity-100
+          @apply opacity-100 visible  border-opacity-100
         }
       }
     }
