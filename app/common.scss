@@ -1,0 +1,174 @@
+$hamburger-layer-color: rgb(210 81 95);
+$hamburger-active-layer-color: rgb(210 81 95);
+$hamburger-hover-opacity: 1;
+@import "hamburgers/_sass/hamburgers/hamburgers.scss";
+
+body {
+  font-size: 1rem;
+}
+
+.logo-title {
+  color: white;
+  font-size: 1.3rem;
+  font-family: fantasy;
+}
+
+header {
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  display: flex;
+  border-bottom: 2px solid red;
+  background: linear-gradient(49deg, rgb(210 81 95) 28%, rgb(70 64 171) 100%, rgb(0 0 0) 100%);
+}
+
+
+@media screen and (min-width: 768px) {
+  nav {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: row;
+    margin-left: auto;
+    gap: 2rem;
+
+    > ul {
+      color: white;
+      line-height: 2.8rem;
+
+      > li {
+        a.active {
+          color: #ff75b0;
+        }
+
+        a:hover {
+          color: #ff75b0;
+        }
+      }
+
+      // 二级菜单
+      > ul {
+        color: black;
+        transition: all ease-in-out 0.3s;
+        visibility: hidden;
+        border-top: 4px solid red;
+        border-radius: 0 0 0.25rem 0.25rem;
+        box-shadow: 2px 3px 5px #00000061;
+        box-sizing: content-box;
+        min-width: 8rem;
+        line-height: 2rem;
+        @apply absolute  opacity-0  border border-opacity-0 invisible mt-8 bg-white;
+
+        > li {
+
+          @apply px-2;
+          a.active {
+            color: #ff75b0;
+          }
+
+          &:hover {
+            @apply text-red-500
+          }
+        }
+
+
+      }
+
+      &:hover {
+        > ul {
+          @apply opacity-100 visible mt-0.5 border-opacity-100
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav.is-active {
+    opacity: 1;
+    display: flex;
+  }
+  nav {
+    a {
+      display: inline-block;
+    }
+
+    display: none;
+    opacity: 0;
+    text-indent: 0.5rem;
+    flex-flow: column;
+    position: absolute;
+    top: 2.8rem;
+    width: 80%;
+    max-width: 12rem;
+    right: 2px;
+    background: #3e5376;
+    border-top: 2px solid red;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3803921569);
+
+    > ul {
+
+      opacity: 0.9;
+      color: white;
+      line-height: 2rem;
+
+      > li {
+        box-shadow: 0px 1px 1px #00000061;
+
+        a.active {
+          color: #ff75b0;
+        }
+
+        a:hover {
+          color: #ff75b0;
+        }
+      }
+
+      // 二级菜单
+      > ul {
+        transition: none !important;
+        box-shadow: 0px 1px 1px #00000061;
+        min-width: 8rem;
+        line-height: 2rem;
+        color: white;
+        opacity: 0.9;
+
+        > li {
+          text-indent: 1rem;
+
+          a.active {
+            color: #ff75b0;
+          }
+
+          &:hover {
+            @apply text-red-500
+          }
+        }
+
+
+      }
+
+      &:hover {
+        > ul {
+          @apply opacity-100 visible mt-0.5 border-opacity-100
+        }
+      }
+    }
+
+    > button {
+      @apply mx-auto my-1
+    }
+  }
+}
+
+.declaration-area {
+  background-image: url(/img/ng.jpg);
+
+  > .sub-text {
+    margin-top: 0.5rem;
+    opacity: 0.5;
+    font-size: 0.9rem;
+  }
+}
+
