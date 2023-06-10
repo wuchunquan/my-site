@@ -5,6 +5,17 @@ $hamburger-hover-opacity: 1;
 
 body {
   font-size: 1rem;
+  background: #1e1d2b;
+}
+
+.dash-line {
+  border: 1px dashed white;
+  opacity: 0.5;
+  //height: 1px;
+  //background: linear-gradient(to left, transparent 0%, transparent 50%, red 50%, red 100%);
+  //background-size: 15px 10px;
+  //background-repeat: repeat-x;
+  //background-position: top;
 }
 
 .logo-title {
