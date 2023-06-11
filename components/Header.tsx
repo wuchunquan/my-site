@@ -1,13 +1,12 @@
 'use client'
 import Link from "next/link";
-import ActiveLink from "@/components/ActiveLink";
 import {useEffect, useState} from "react";
 import {usePathname} from "next/navigation";
 
 const routes = [
     {name: "首页", href: "/"},
     {
-        name: "项目", href: "/projects", children: [
+        name: "项目", href: null, children: [
             {name: "图像处理", href: "/projects/imgProcess"},
             {name: "图像处理2", href: "/projects/imgProcess2"},
         ]
@@ -32,12 +31,15 @@ export default function Header() {
                 <span className="logo-title mx-2 flex justify-center items-center">
                     WCQ-SITE
                 </span>
-                <nav className={collapse&&'is-active'||''}>
+                <nav className={collapse && 'is-active' || ''}>
                     {routes.map(item => <ul key={item.href}>
                         <li>
-                            <Link className={pathname == item.href && "active" || ''} href={item.href}>
-                                {item.name}
-                            </Link>
+                            {
+                                item.href !== null ?
+                                    <Link className={pathname == item.href && "active" || ''} href={item.href}>
+                                        {item.name}
+                                    </Link> : <a className="cursor-pointer">{item.name}</a>
+                            }
                         </li>
                         {
                             item.children && <ul>
@@ -55,7 +57,9 @@ export default function Header() {
                             style={{background: '#bd60d7'}}>联系我
                     </button>
                 </nav>
-                <button className={"hamburger hamburger--slider visible md:!hidden !flex !ml-auto !py-2.5 "+(collapse&&'is-active')} type="button" onClick={()=>setCollapse(!collapse)}>
+                <button
+                    className={"hamburger hamburger--slider visible md:!hidden !flex !ml-auto !py-2.5 " + (collapse && 'is-active')}
+                    type="button" onClick={() => setCollapse(!collapse)}>
                   <span className="hamburger-box">
                     <span className="hamburger-inner"></span>
                   </span>

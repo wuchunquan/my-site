@@ -7,7 +7,7 @@ module.exports = {
     ],
     theme: {
         container: {
-            center: true,
+            center: true
         },
         extend: {
             backgroundImage: {
@@ -16,8 +16,8 @@ module.exports = {
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
         },
-        'blue-m':'',
-        'red-m':'',
+        'blue-m': '',
+        'red-m': '',
     },
     plugins: [],
 }

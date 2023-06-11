@@ -6,4 +6,11 @@
     .flex-c {
         @apply flex flex-col justify-center items-center;
     }
+
+    @media (min-width: 1536px) {
+        .container {
+            max-width: 1280px;
+        }
+    }
+
 }
