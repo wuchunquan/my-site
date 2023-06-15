@@ -3,12 +3,18 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 import {usePathname} from "next/navigation";
 
-const routes = [
+interface Route {
+    name: string
+    href: string | null
+    target?: string
+    children?: Route[]
+}
+
+const routes: Route[] = [
     {name: "首页", href: "/"},
     {
         name: "项目", href: null, children: [
-            {name: "图像处理", href: "/projects/imgProcess"},
-            {name: "图像处理2", href: "/projects/imgProcess2"},
+            {name: "图像处理", href: "https://wuchunquan.github.io/img-process-site/", target: "_blank"},
         ]
     },
     {name: "关于我", href: "/me"}
@@ -36,19 +42,28 @@ export default function Header() {
                         <li>
                             {
                                 item.href !== null ?
-                                    <Link className={pathname == item.href && "active" || ''} href={item.href}>
+                                    <a className={pathname == item.href && "active" || ''} href={item.href}
+                                          target={item.target}>
                                         {item.name}
-                                    </Link> : <a className="cursor-pointer">{item.name}</a>
+                                    </a> : <a className="cursor-pointer">{item.name}</a>
                             }
                         </li>
                         {
                             item.children && <ul>
                                 {item.children.map(child => <li key={child.href} className='hvr-underline-from-center'>
-                                    <Link
+                                    {item.target === '_blank' ? <a
+                                        target={child.target}
                                         className={(pathname == child.href && "active" || '')}
-                                        href={child.href}>
+                                        href={child.href === null ? 'javascript:' : child.href}
+                                    >
                                         {child.name}
-                                    </Link>
+                                    </a> : <a
+                                        target={child.target}
+                                        className={(pathname == child.href && "active" || '')}
+                                        href={child.href === null ? 'javascript:' : child.href}
+                                    >
+                                        {child.name}
+                                    </a>}
                                 </li>)}
                             </ul>
                         }
