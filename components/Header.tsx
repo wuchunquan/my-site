@@ -41,29 +41,25 @@ export default function Header() {
                     {routes.map(item => <ul key={item.href}>
                         <li>
                             {
-                                item.href !== null ?
-                                    <a className={pathname == item.href && "active" || ''} href={item.href}
-                                          target={item.target}>
-                                        {item.name}
-                                    </a> : <a className="cursor-pointer">{item.name}</a>
+                                <Link
+                                    className={(pathname == item.href || (item.children && item.children.find(child => child.href === pathname))) && "active" || ''}
+                                    // @ts-ignore
+                                    href={item.href || item.children?.[0].href}
+                                    target={item.target}>
+                                    {item.name}
+                                </Link>
                             }
                         </li>
                         {
                             item.children && <ul>
                                 {item.children.map(child => <li key={child.href} className='hvr-underline-from-center'>
-                                    {item.target === '_blank' ? <a
+                                    <Link
                                         target={child.target}
                                         className={(pathname == child.href && "active" || '')}
                                         href={child.href === null ? 'javascript:' : child.href}
                                     >
                                         {child.name}
-                                    </a> : <a
-                                        target={child.target}
-                                        className={(pathname == child.href && "active" || '')}
-                                        href={child.href === null ? 'javascript:' : child.href}
-                                    >
-                                        {child.name}
-                                    </a>}
+                                    </Link>
                                 </li>)}
                             </ul>
                         }

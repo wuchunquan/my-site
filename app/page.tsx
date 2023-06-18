@@ -1,49 +1,43 @@
-import Image from 'next/image'
-
 export default function Home() {
     return (
-        <main className="overflow-x-hidden">
-            <section>
+        <main className="bg-white">
+            <section className="relative isolate px-6 pt-14 lg:px-8 h-[calc(100vh-3rem)] overflow-y-hidden">
                 <div
-                    className="the-head-area container mt-6   flex flex-c text-white border-0 rounded-xl animate__animated animate__fadeInDown">
-                    <div><img className="w-32 rounded-2xl" src="/img/avatar.jpg" alt="avatar" style={{filter:"invert(1) hue-rotate(115deg) brightness(1.1) contrast(0.9)"}}/></div>
-                </div>
-            </section>
-            <section>
-                <div
-                    className="declaration-area container mt-6 h-28  flex-c text-white border-0 rounded-xl animate__animated animate__fadeInDown">
-                    <h1 className="text-2xl md:text-4xl animate__animated animate__fadeInDown opacity-90">
-                        请用一只玫瑰纪念我
-                    </h1>
-                    <div className="opacity-50 mt-2  text-[0.9rem]">用草也行....</div>
-                </div>
-            </section>
-            <section>
-                <div className="container flex flex-col mt-10 md:grid  md:gap-8  md:grid-cols-12 ">
+                    className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 "
+                    aria-hidden="true"
+                >
                     <div
-                        className=" md:col-span-7 border-0 rounded-xl overflow-hidden animate__animated animate__fadeInLeft">
-                        <img alt="pic" src="/img/ng.jpg"/>
-                    </div>
-                    <div
-                        className="overflow-hidden md:col-span-5 flex mt-10 md:mt-0 justify-center flex-col border-0 rounded-xl text-white bg-[#373655] opacity-80 animate__animated animate__fadeInRight">
-                        <div className="border-b-2 w-full h-10 flex items-center"
-                             style={{'background': 'linear-gradient(88deg, rgb(210, 81, 95) 28%, rgb(70, 64, 171) 100%, rgb(0, 0, 0) 100%)'}}>
-                            <div className="w-4 h-4 border rounded-xl inline-block mr-2 ml-auto bg-white"></div>
-                            <div className="w-4 h-4 border rounded-xl inline-block mr-2 bg-white"></div>
-                            <div className="w-4 h-4 border rounded-xl inline-block mr-2 bg-white"></div>
-                        </div>
-                        <div className="flex-c flex-1 opacity-90">
-                            <h1 className="text-2xl my-2 lg:text-3xl">梦蜉蝣</h1>
-                            <p className="py-1 opacity-80 lg:text-xl ">看东风</p>
-                            <p className="text-xl my-4 lg:text-2xl">春风拂叶奏乐音，琴瑟悠悠似无心</p>
-                            <p className="text-xl my-4 lg:text-2xl">酒对半月谈天久，蜉蝣梦短也尽情</p>
-                        </div>
+                        className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                        style={{
+                            clipPath:
+                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                        }}
+                    />
+                </div>
+                <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 ">
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                            一些我写的东西
+                        </h1>
+                        <p className="mt-6 text-lg leading-8 text-gray-600">
+                            每天写一点东西，有用或者有趣
+                        </p>
                     </div>
                 </div>
-            </section>
-            <section>
-                <div className="container w-full dash-line mt-10 "></div>
+                <div
+                    className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                    aria-hidden="true"
+                >
+                    <div
+                        className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                        style={{
+                            clipPath:
+                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                        }}
+                    />
+                </div>
             </section>
         </main>
+
     )
 }

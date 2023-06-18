@@ -11,7 +11,7 @@ export default function Me() {
             <div
                 className="declaration-area container mt-6 h-28  flex-c text-white border-0 rounded-xl animate__animated animate__fadeInDown">
                 <h1 className="text-2xl md:text-4xl animate__animated animate__fadeInDown opacity-90">
-                    请用一只玫瑰纪念我
+                    请用一支玫瑰纪念我
                 </h1>
                 <div className="opacity-50 mt-2  text-[0.9rem]">用草也行....</div>
             </div>
